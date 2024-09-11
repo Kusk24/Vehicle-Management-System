@@ -8,6 +8,11 @@ public class Motorcycle extends Vehicle{
         this.hasSidecar = hasSidecar;
     }
 
+    public Motorcycle(Vehicle vehicle, boolean hasSideCar){
+        super(vehicle);
+        this.hasSidecar = hasSideCar;
+    }
+
     @Override
     public void displayInfo() {
         System.out.println("*****Motorcycle*****");

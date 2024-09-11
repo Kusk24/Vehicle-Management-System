@@ -8,6 +8,11 @@ public class Car extends Vehicle {
         this.doors = doors;
     }
 
+    public Car(Vehicle vehicle, int doors){
+        super(vehicle);
+        this.doors = doors;
+    }
+
     @Override
     public void displayInfo() {
         System.out.println("*****Car*****");

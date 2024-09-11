@@ -8,6 +8,11 @@ public class Truck extends Vehicle {
         this.payloadCapacity = payloadCapacity;
     }
 
+    public Truck(Vehicle vehicle, int payloadCapacity){
+        super(vehicle);
+        this.payloadCapacity = payloadCapacity;
+    }
+
     @Override
     public void displayInfo() {
         System.out.println("*****Truck*****");
