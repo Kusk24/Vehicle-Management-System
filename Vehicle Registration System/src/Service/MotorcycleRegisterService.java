@@ -1,12 +1,10 @@
 package Service;
 
 import Model.Motorcycle;
-import Model.Vehicle;
 
 import java.io.IOException;
 
 public class MotorcycleRegisterService extends VehicleRegisterService{
-    private boolean hasSideCar;
 
     @Override
     public void getRegisterInfo() throws IOException {

@@ -1,5 +1,6 @@
 package Service;
 
+import Dao.VehicleDao;
 import Model.Car;
 import Model.Motorcycle;
 import Model.Truck;
@@ -10,30 +11,33 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class VehicleRegisterService {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    Vehicle vehicle;
+    public BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public Vehicle vehicle;
     private static Vehicle[] vehicleList = new Vehicle[100];
+    public VehicleDao vehicleDao;
 
     public void getCommonInfo() throws IOException{
         System.out.print("Enter Vehicle Brand : ");
         String brand = br.readLine();
         System.out.print("Enter Vehicle Model : ");
         String model = br.readLine();
-        vehicle = new Vehicle(brand, model);
+        System.out.print("Enter Vehicle Rent Price: ");
+        double rentPrice = Double.parseDouble(br.readLine());
+        vehicle = new Vehicle(brand, model, rentPrice);
     }
 
     public void createVehicle() throws IOException{
         getCommonInfo();
         getRegisterInfo();
-        vehicleList[Vehicle.getVehicleCount()-1] = vehicle;
+//        vehicleList[Vehicle.getVehicleCount()-1] = vehicle;
+        vehicleDao.create(vehicle);
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public Vehicle getVehicle() {return vehicle;
     }
 
     public static Vehicle[] getVehicleList() {
-        return VehicleRegisterService.vehicleList;
+        return vehicleList;
     }
 
     public void getRegisterInfo() throws IOException {
@@ -42,7 +46,7 @@ public class VehicleRegisterService {
 
     public void display(){
         for (int i = 0; i < Vehicle.getVehicleCount(); i++){
-            VehicleRegisterService.getVehicleList()[i].displayInfo();
+            VehicleDao.getAll()[i].displayInfo();
         }
         System.out.println();
     }

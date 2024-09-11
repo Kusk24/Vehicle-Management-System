@@ -3,8 +3,8 @@ package Model;
 public class Car extends Vehicle {
     private int doors;
 
-    public Car (String brand, String model, int doors){
-        super(brand, model);
+    public Car (String brand, String model, double rentPrice, int doors){
+        super(brand, model, rentPrice);
         this.doors = doors;
     }
 

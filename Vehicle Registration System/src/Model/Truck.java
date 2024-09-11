@@ -3,8 +3,8 @@ package Model;
 public class Truck extends Vehicle {
     private int payloadCapacity;
 
-    public Truck (String brand, String model, int payloadCapacity) {
-        super(brand, model);
+    public Truck (String brand, String model,double rentPrice, int payloadCapacity) {
+        super(brand, model, rentPrice);
         this.payloadCapacity = payloadCapacity;
     }
 

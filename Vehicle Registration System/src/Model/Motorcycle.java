@@ -3,8 +3,8 @@ package Model;
 public class Motorcycle extends Vehicle{
     private boolean hasSidecar;
 
-    public Motorcycle(String brand, String model, boolean hasSidecar){
-        super(brand, model);
+    public Motorcycle(String brand, String model, double rentPrice, boolean hasSidecar){
+        super(brand, model, rentPrice);
         this.hasSidecar = hasSidecar;
     }
 
